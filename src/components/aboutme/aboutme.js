@@ -59,12 +59,12 @@ export const AboutMe = () => {
           <Heading title="About Me" />
           <div>
             <p>
-              Hey there! My name is [...] and I’m a software engineer based in
-              [...], Canada.
+              Hey there! My name is Jonathan Batanian and I’m a software engineer based in
+              Quebec, Canada.
             </p>
-            <p>I’m currently [...] I am interested in [...].</p>
-            <p>My main interests are [...].</p>
-            <p>Some of my hobbies include [...]. Also I like [...].</p>
+            <p>I’m currently pursuing a Bachelor’s degree in Software Engineering at McGill University and completing co-op internships to gain hands-on experience in the field. I am interested in software development, web technologies, and systems engineering.</p>
+            <p>My main interests are building impactful software solutions, exploring emerging technologies, and contributing to projects that blend creativity with technical problem-solving.</p>
+            <p>Some of my hobbies include playing video games, discovering new cafés, and going out with friends. Also I like learning about tech startups and working on personal coding projects in my free time.</p>
           </div>
         </div>
         {desktop ? <PhotoBlobs /> : null}
