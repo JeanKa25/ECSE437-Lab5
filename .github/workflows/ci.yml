@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "16"
+
+      # Install dependencies
+      - name: npm install
+        run: npm install --legacy-peer-deps
+
+      # Build the project
+      - name: npm run build
+        run: npm run build
+
+      # Copy public files to artifact directory
+      - name: Copy build files to staging directory
+        run: |
+          mkdir -p artifact
+          cp -R public/* artifact/
+
+      # Upload artifact 'Portfolio'
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Portfolio
+          path: artifact
